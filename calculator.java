@@ -7,8 +7,8 @@ public class ScientificCalculator {
         
         while (true) {
             System.out.println("\nScientific Calculator Menu:");
-            System.out.println("1. Square root (√x)");
-            System.out.println("2. Factorial (x!)");
+            System.out.println("1. Square root (x)");
+            System.out.println("2. Factorial (x)");
             System.out.println("3. Natural logarithm (ln(x))");
             System.out.println("4. Power function (x^y)");
             System.out.println("5. Exit");
