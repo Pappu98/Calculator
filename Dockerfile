@@ -1,2 +1,2 @@
 FROM ubuntu:latest
-copy calculator.java /app/calculator.java
+COPY calculator.java /app/calculator.java
