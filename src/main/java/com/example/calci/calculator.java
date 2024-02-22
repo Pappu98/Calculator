@@ -1,78 +1,83 @@
+package com.example.calculator;
 import java.util.Scanner;
-import java.lang.Math;
 
 public class calculator {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
-        while (true) {
-            System.out.println("\nScientific Calculator Menu:");
-            System.out.println("1. Square root (x)");
-            System.out.println("2. Factorial (x)");
-            System.out.println("3. Natural logarithm (ln(x))");
-            System.out.println("4. Power function (x^y)");
+
+        boolean exit = false;
+
+        System.out.println("Calculator :-");
+        while (!exit) 
+        {
+            System.out.println("1. Add");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Multiplication");
+            System.out.println("4. Division");
             System.out.println("5. Exit");
 
             System.out.print("Enter your choice (1-5): ");
             int choice = scanner.nextInt();
 
-            switch (choice) {
+            if (choice == 5) 
+            {
+                exit = true;
+                System.out.println("Exiting the calculator. Byeee!");
+                continue;
+            }
+
+            System.out.print("Enter first number: ");
+            double num1 = scanner.nextDouble();
+
+            double num2;
+            do {
+                System.out.print("Enter second number: ");
+                num2 = scanner.nextDouble();
+                if (choice == 4 && num2 == 0) 
+                {
+                    System.out.println("Error: Division by zero is not allowed. Please enter a non-zero second number.");
+                }
+            } while (choice == 4 && num2 == 0);
+
+            double result = 0;
+
+            switch (choice) 
+            {
                 case 1:
-                    squareRoot();
+                    result = add(num1, num2);
                     break;
                 case 2:
-                    factorial();
+                    result = subtract(num1, num2);
                     break;
                 case 3:
-                    naturalLog();
+                    result = multiply(num1, num2);
                     break;
                 case 4:
-                    powerFunction();
+                    result = divide(num1, num2);
                     break;
-                case 5:
-                    System.out.println("Exiting the program. Goodbye!");
-                    scanner.close();
-                    return;
                 default:
-                    System.out.println("Invalid choice. Please enter a number from 1 to 5.");
+                    System.out.println("Invalid choice. Please enter a number between 1 and 5.");
+                    continue;
             }
+
+            System.out.println("Result: " + result);
         }
     }
 
-    public static void squareRoot() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        double num = scanner.nextDouble();
-        double result = Math.sqrt(num);
-        System.out.println("Square root of " + num + " is " + result);
+    public static double add(double a, double b) {
+        return a + b;
     }
 
-    public static void factorial() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a non-negative integer: ");
-        int num = scanner.nextInt();
-        int result = 1;
-        for (int i = 2; i <= num; i++) {
-            result *= i;
-        }
-        System.out.println("Factorial of " + num + " is " + result);
+    public static double subtract(double a, double b) {
+        return a - b;
     }
 
-    public static void naturalLog() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        double num = scanner.nextDouble();
-        double result = Math.log(num);
-        System.out.println("Natural logarithm of " + num + " is " + result);
+    public static double multiply(double a, double b) {
+        return a * b;
     }
 
-    public static void powerFunction() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the base: ");
-        double base = scanner.nextDouble();
-        System.out.print("Enter the exponent: ");
-        double exponent = scanner.nextDouble();
-        double result = Math.pow(base, exponent);
-        System.out.println(base + " raised to the power of " + exponent + " is " + result);
+    public static double divide(double a, double b) {
+        return a / b;
     }
 }
