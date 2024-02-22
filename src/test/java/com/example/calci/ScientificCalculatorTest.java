@@ -34,7 +34,7 @@ public class ScientificCalculatorTest {
     public void testSquareRoot() {
         String input = "25\n5\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-        ScientificCalculator.squareRoot();
+        calculator.squareRoot();
         assertEquals("Square root of 25.0 is 5.0\n", outContent.toString());
     }
 
@@ -42,7 +42,7 @@ public class ScientificCalculatorTest {
     public void testFactorial() {
         String input = "5\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-        ScientificCalculator.factorial();
+        calculator.factorial();
         assertEquals("Factorial of 5 is 120\n", outContent.toString());
     }
 
@@ -50,7 +50,7 @@ public class ScientificCalculatorTest {
     public void testNaturalLog() {
         String input = "10\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-        ScientificCalculator.naturalLog();
+        calculator.naturalLog();
         assertEquals("Natural logarithm of 10.0 is 2.302585092994046\n", outContent.toString());
     }
 
@@ -58,7 +58,7 @@ public class ScientificCalculatorTest {
     public void testPowerFunction() {
         String input = "2\n3\n";
         System.setIn(new ByteArrayInputStream(input.getBytes()));
-        ScientificCalculator.powerFunction();
+        calculator.powerFunction();
         assertEquals("Enter the base: Enter the exponent: 2.0 raised to the power of 3.0 is 8.0\n", outContent.toString());
     }
 }
