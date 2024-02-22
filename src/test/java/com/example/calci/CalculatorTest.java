@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calci;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class CalculatorTest {
 
-    private final Calculator calculator = new Calculator();
+    private final calculator calculator = new calculator();
 
     @Test
     public void testAdd() {
