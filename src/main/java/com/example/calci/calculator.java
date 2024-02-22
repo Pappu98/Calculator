@@ -5,9 +5,7 @@ import java.util.*;
 
 public class calculator {
 
-
-
-    public static void main(String[] args) {
+   public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -82,8 +80,11 @@ public class calculator {
                     break;
 
                 case 4:
+                    System.out.print("Enter Exponent: ");
 
-                    result = findPower(num);
+                    double e = scanner.nextDouble();
+                    
+                    result = findPower(num,e);
 
                     break;
 
@@ -139,15 +140,11 @@ public class calculator {
         return ans;
     }
 
-    public static double findPower(double a) {
+    public static double findPower(double a,double e) {
 
         double ans;
 
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter Exponent: ");
-
-        double e = scanner.nextDouble();
 
         ans=Math.pow(a,e);
 
