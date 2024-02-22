@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math;
 
-public class ScientificCalculator {
+public class calculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
@@ -76,4 +76,3 @@ public class ScientificCalculator {
         System.out.println(base + " raised to the power of " + exponent + " is " + result);
     }
 }
-
