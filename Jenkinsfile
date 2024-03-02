@@ -47,6 +47,7 @@ pipeline{
         			script {
           				ansiblePlaybook(
 				            playbook: 'deploy.yaml'
+				            inventory: 'Inventory'
           				)
         			}
       			}
